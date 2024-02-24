@@ -30,7 +30,7 @@ steps:
   
   displayName: 'npm install and build'
   
-- script: npm test
+- script: ng test --browsers=ChromeHeadless --code-coverage --watch=false
   workingDirectory: 'Angular'
   displayName: 'npm test'
   
