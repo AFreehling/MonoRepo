@@ -10,15 +10,22 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo  '$(System.DefaultWorkingDirectory)'
+      dir
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '18.x'
   displayName: 'Install Node.js'
-
+  
 - script: |
     npm install -g @angular/cli
     npm install
     ng build --prod
+  
   displayName: 'npm install and build'
   
 - script: npm test
