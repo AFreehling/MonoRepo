@@ -1,0 +1,9 @@
+﻿using WebApi.Model;
+
+namespace WebApi.Services
+{
+    public interface IBookService
+    {
+        IEnumerable<BookDto> GetBooks();
+    }
+}
