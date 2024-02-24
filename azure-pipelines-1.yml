@@ -26,11 +26,11 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-  workingDirectory: '$(Agent.BuildDirectory)/Angular'
+  workingDirectory: 'Angular'
   
   displayName: 'npm install and build'
   
 - script: npm test
-  workingDirectory: '$(Agent.BuildDirectory)/Angular'
+  workingDirectory: 'Angular'
   displayName: 'npm test'
   
