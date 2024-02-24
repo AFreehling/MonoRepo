@@ -15,7 +15,8 @@ steps:
   inputs:
     script: |
       echo  '$(System.DefaultWorkingDirectory)'
-      dir
+      echo  '$(Agent.BuildDirectory)'
+      ls
 - task: NodeTool@0
   inputs:
     versionSpec: '18.x'
@@ -25,11 +26,11 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-  workingDirectory: '$(System.DefaultWorkingDirectory)/Angular'
+  workingDirectory: '$(Agent.BuildDirectory)/Angular'
   
   displayName: 'npm install and build'
   
 - script: npm test
-  workingDirectory: '$(System.DefaultWorkingDirectory)/Angular'
+  workingDirectory: '$(Agent.BuildDirectory)/Angular'
   displayName: 'npm test'
   
