@@ -1,0 +1,5 @@
+trigger:
+  paths:
+    exclude:
+      - 'WebApi'
+      - 'Angular'
